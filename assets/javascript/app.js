@@ -18,7 +18,7 @@ var firebaseConfig = {
   var database = firebase.database();
 
    // Capture Button Click
-   $("#add-user").on("click", function (event) {
+   $("#add-train").on("click", function (event) {
     // Don't refresh the page!
     event.preventDefault();
     var schedule = {
@@ -33,11 +33,11 @@ var firebaseConfig = {
   // Don't forget to provide initial data to your Firebase database.
   // Firebase watcher + initial loader HINT: .on("value")
   db.ref().on("value", function (snap) {
-    var login = snap.val();
-    $("#trainName-display").text(login.name);
-    $("#destination-display").text(login.email);
-    $("#trainTime-display").text(login.age);
-    $("#frequency-display").text(login.comment);
+    var schedule = snap.val();
+    $("#trainName-display").text(schedule.trainName);
+    $("#destination-display").text(schedule.destination);
+    $("#trainTime-display").text(schedule.trainTime);
+    $("#frequency-display").text(schedule.frequency);
   }, function(err) {
     console.log("Error: " + err.code);
   });
