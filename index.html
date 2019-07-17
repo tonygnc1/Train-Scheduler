@@ -49,10 +49,10 @@
     </div>
     <div class="row">
         <div class="col-lg-3">
-            <div class="card-body">
+            <!-- <div class="card-body"> -->
                 <h6>Train Name</h6>
                 <span id="trainName"></span>
-            </div>
+            <!-- </div> -->
         </div>
         <div class="col-lg-3">
             <h6>Destination</h6>
@@ -87,20 +87,16 @@
                 <form role="form">
                     <div class="form-group">
                         <label for="trainName-input">Train Name</label>
-                        <div class="form-control" id="trainName-input" type="text"></div>
-                    </div>
+                        <input class="form-control" id="trainName-input" type="text"></div>
                     <div class="form-group">
                         <label for="destination-input">Destination</label>
-                        <div class="form-control" id="destination-input" type="text"></div>
-                    </div>
+                        <input class="form-control" id="destination-input" type="text"></div>
                     <div class="form-group">
                         <label for="trainTime-input">First Train Time (HH:mm - military time)</label>
-                        <div class="form-control" id="trainTime-input" type="number"></div>
-                    </div>
+                        <input class="form-control" id="trainTime-input" type="number"></div>
                     <div class="form-group">
                         <label for="frequency-input">Frequency (min)</label>
-                        <div class="form-control" id="frequency-input" type="number"></div>
-                    </div>
+                        <input class="form-control" id="frequency-input" type="number"></div>
                 </form>
                 <button class="btn btn-primary" id="add-train" type="submit">Submit</button>
             </div>

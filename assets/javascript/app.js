@@ -14,12 +14,12 @@ var firebaseConfig = {
   
   firebase.initializeApp(firebaseConfig);
   
-  // Use the below initialValue
+  //InitialValue
   var database = firebase.database();
 
    // Capture Button Click
    $("#add-train").on("click", function (event) {
-    // Don't refresh the page!
+    
     event.preventDefault();
     var schedule = {
       trainName: $("#trainName-input").val().trim(),
