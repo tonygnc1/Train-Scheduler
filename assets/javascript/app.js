@@ -56,7 +56,7 @@ function timeConverter(frequency, trainTime) {
 }
 
 
-database.ref().on("value", function (snap) {
+database.ref().on("child_added", function (snap) {
   var dbschedule = snap.val();
 
 var trainName = dbschedule.trainName;
