@@ -24,20 +24,36 @@ var firebaseConfig = {
     var schedule = {
       trainName: $("#trainName-input").val().trim(),
       destination: $("#destination-input").val().trim(),
+      //update the traintime to the correct syntax
       trainTime: $("#trainTime-input").val().trim(),
       frequency: $("#frequency-input").val().trim()
+
     };
-    // Code in the logic for storing the most recent user.
-    db.ref().set(login);
+
+    console.log(schedule);
+
+    // Code in the logic for storing the most recent schedule.
+    database.ref().set(schedule);
   });
-  // Don't forget to provide initial data to your Firebase database.
-  // Firebase watcher + initial loader HINT: .on("value")
-  db.ref().on("value", function (snap) {
-    var schedule = snap.val();
-    $("#trainName-display").text(schedule.trainName);
-    $("#destination-display").text(schedule.destination);
-    $("#trainTime-display").text(schedule.trainTime);
-    $("#frequency-display").text(schedule.frequency);
+  
+
+  // trainprediction code calculations
+  
+function timeConverter(frequency, trainTime) {
+  var tMinutesTillTrain = tFrequency - tRemainder;
+    console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
+}
+
+
+  database.ref().on("value", function (snap) {
+    var dbschedule = snap.val();
+    $("#trainName-display").text(dbschedule.trainName);
+    $("#destination-display").text(dbschedule.destination);
+    $("#trainTime-display").text(dbschedule.trainTime);
+    $("#frequency-display").text(dbschedule.frequency);
+
+    //create another div that stores the nextTimeArrival
+    //$("#NextTime").append(timeconverter(dbschedule.frequency, dbschedule.trainTime))
   }, function(err) {
     console.log("Error: " + err.code);
   });
