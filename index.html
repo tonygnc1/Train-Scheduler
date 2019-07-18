@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script></script
     <!-- LINKS FOR FIREBASE GO HERE -->
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
@@ -51,20 +52,20 @@
         <div class="col-lg-3">
             <!-- <div class="card-body"> -->
                 <h6>Train Name</h6>
-                <span id="trainName"></span>
+                <span id="trainName-display"></span>
             <!-- </div> -->
         </div>
         <div class="col-lg-3">
             <h6>Destination</h6>
-            <span id="destination"></span>
+            <span id="destination-display"></span>
         </div>
         <div class="col-lg-2">
             <h6>Frequency (min)</h6>
-            <span id="trainTime"></span>
+            <span id="trainTime-display"></span>
         </div>
         <div class="col-lg-2">
             <h6>Next Arrival</h6>
-            <span id="frequency"></span>
+            <span id="frequency-display"></span>
         </div>
         <div class="col-lg-2">
             <h6>Minutes Away</h6>
@@ -98,7 +99,7 @@
                         <label for="frequency-input">Frequency (min)</label>
                         <input class="form-control" id="frequency-input" type="number"></div>
                 </form>
-                <button class="btn btn-primary" id="add-train" type="ad-train">Submit</button>
+                <button class="btn btn-primary" id="add-train" type="#ad-train">Submit</button>
             </div>
         </div>
     </div>

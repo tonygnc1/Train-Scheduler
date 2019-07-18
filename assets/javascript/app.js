@@ -30,7 +30,7 @@ var firebaseConfig = {
 
     };
 
-    console.log(schedule);
+    // console.log(schedule);
 
     // Code in the logic for storing the most recent schedule.
     database.ref().set(schedule);
@@ -51,10 +51,14 @@ function timeConverter(frequency, trainTime) {
     $("#destination-display").text(dbschedule.destination);
     $("#trainTime-display").text(dbschedule.trainTime);
     $("#frequency-display").text(dbschedule.frequency);
-
+console.log(dbschedule);
     //create another div that stores the nextTimeArrival
     //$("#NextTime").append(timeconverter(dbschedule.frequency, dbschedule.trainTime))
   }, function(err) {
     console.log("Error: " + err.code);
   });
   
+  $("#trainName-display").text(getItem("trainName"));
+    $("#destination-display").text(getItem("destination"));
+    $("#trainTime-display").text(getItem("trainTime"));
+    $("#frequency-display").text(getItem("frequency"));
