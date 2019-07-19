@@ -17,10 +17,17 @@ firebase.initializeApp(firebaseConfig);
 //InitialValue
 var database = firebase.database();
 
+var randomDate = "02/23/1999";
+var randomFormat = "MM/DD/YYYY";
+var convertedDate = moment(randomDate, randomFormat);
+var tMinutesTillTrain = 
+
 // Capture Button Click
 $("#add-train").on("click", function (event) {
 
   event.preventDefault();
+
+  moment.HTML5_FMT.TIME
 
   var schedule = {
     trainName: $("#trainName-input").val().trim(),
@@ -50,10 +57,8 @@ $("#frequency-input").val("");
 
 // trainprediction code calculations
 
-function timeConverter(frequency, trainTime) {
-  var tMinutesTillTrain = tFrequency - tRemainder;
-  console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
-}
+    // Minute Until Train
+
 
 
 database.ref().on("child_added", function (snap) {
@@ -68,7 +73,9 @@ var newRow = $("<tr>").append(
   $("<td>").text(trainName),
   $("<td>").text(destination),
   $("<td>").text(trainTime),
-  $("<td>").text(frequency)
+  $("<td>").text(frequency),
+  $("<td>").text(nextTrain),
+  $("<td>").text(tMinutesTillTrain),
 );
 
 // Append the new row to the table
@@ -79,5 +86,36 @@ console.log(dbschedule);
 }, function (err) {
   console.log("Error: " + err.code);
 });
+var frequency = "0";
+var Remainder = "0";
+ // Time apart (remainder)
+ var tFrequency = 3;
+
+ // Time is 3:30 AM
+ var firstTime = "03:30";
+
+ // First Time (pushed back 1 year to make sure it comes before current time)
+ var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
+ console.log(firstTimeConverted);
+
+ // Current Time
+ var currentTime = moment();
+ console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+
+ // Difference between the times
+ var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+ console.log("DIFFERENCE IN TIME: " + diffTime);
+
+ // Time apart (remainder)
+ var tRemainder = diffTime % tFrequency;
+ console.log(tRemainder);
+
+ // Minute Until Train
+ var tMinutesTillTrain = tFrequency - tRemainder;
+ console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
+
+ // Next Train
+ var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+ console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
 
 

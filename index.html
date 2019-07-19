@@ -43,40 +43,44 @@
         <!-- Train Schedule Display header-->
         <div class="col-lg-12">
             <div class="card">
-                <div class="card-header">Current Train Schedule
+                <div class="cardHeader">
+                    <div class="card-header"><h5><strong>Train Schedule</strong></h5>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <br>
     <div class="row">
         <div class="col-lg-12">
 
             <table style="width:100%">
+
                 <thead>
                     <tr>
                         <td>
-                            <h6>Train Name</h6>
+                            <h6><strong>Train Name</strong></h6>
                         </td>
 
                         <td>
-                            <h6>Destination</h6>
+                            <h6><strong>Destination</strong></h6>
                         </td>
 
                         <td>
-                            <h6>Frequency (min)</h6>
-                        </td>
-
-                        <td></td>
-                        <h6>Next Arrival</h6>
+                            <h6><strong>Frequency (min)</strong></h6>
                         </td>
 
                         <td>
-                            <h6>Minutes Away</h6>
+                            <h6><strong>Next Arrival</strong></h6>
+                        </td>
+
+                        <td>
+                            <h6><strong>Minutes Away</strong></h6>
                         </td>
                     </tr>
                 </thead>
                 <tbody>
-                    
+
                 </tbody>
             </table>
 
@@ -88,7 +92,9 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
-                <div class="card-header">Add Train
+                <div class="cardHeader">
+                    <div class="card-header"><h5><strong>Add Train</strong></h5>
+                    </div>
                 </div>
             </div>
         </div>
@@ -99,16 +105,16 @@
             <div class="card-body">
                 <form role="form">
                     <div class="form-group">
-                        <label for="trainName-input">Train Name</label>
+                        <label for="trainName-input"><strong>Train Name</strong></label>
                         <input class="form-control" id="trainName-input" type="text"></div>
                     <div class="form-group">
-                        <label for="destination-input">Destination</label>
+                        <label for="destination-input"><strong>Destination</strong></label>
                         <input class="form-control" id="destination-input" type="text"></div>
                     <div class="form-group">
-                        <label for="trainTime-input">First Train Time (HH:mm - military time)</label>
-                        <input class="form-control" id="trainTime-input" type="number"></div>
+                        <label for="trainTime-input"><strong>First Train Time (HH:mm - military time)</strong></label>
+                        <input class="form-control" id="trainTime-input" type="time"></div>
                     <div class="form-group">
-                        <label for="frequency-input">Frequency (min)</label>
+                        <label for="frequency-input"><strong>Frequency (min)</strong></label>
                         <input class="form-control" id="frequency-input" type="number"></div>
                 </form>
                 <button class="btn btn-primary" id="add-train" type="#ad-train">Submit</button>
